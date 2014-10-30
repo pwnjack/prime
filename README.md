@@ -1,6 +1,6 @@
 # Primer
 
-Front-end build system and task manager.
+Front-end workflow for automated best practices.
 
 ## Setup
 
@@ -24,7 +24,11 @@ Start to develop
 
 	gulp
 
-If an error occurs just start again the webserver
+When finished, build for production
+
+	gulp build
+
+Restart webserver if it hangs
 
 	gulp serve
 
@@ -33,4 +37,4 @@ If an error occurs just start again the webserver
 - Effortless dependencies installation via Bower
 - Updates every change in real-time in your browser
 - Minimization and optimization for /dist version
-- LESS CSS pre-processor support
+- LESS CSS pre-processor and autoprefixer support

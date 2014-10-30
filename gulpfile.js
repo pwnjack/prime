@@ -5,7 +5,6 @@ var $ = require('gulp-load-plugins')();
 var gFilter = require('gulp-filter');
 var mainBowerFiles = require('main-bower-files');
 var del = require('del');
-
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -32,12 +31,6 @@ gulp.task('images', function() {
 	.pipe(gulp.dest('dist/images'))
 });
 
-gulp.task('fonts', ['assets'], function() {
-	return gulp.src(['app/**/*.eot', 'app/**/*.woff', 'app/**/*.svg', 'app/**/*.ttf'])
-	.pipe($.flatten())
-	.pipe(gulp.dest('dist/fonts'))
-});
-
 gulp.task('assets', function () {
 	var jsFilter = gFilter('**/*.js');
     var cssFilter = gFilter('**/*.css');
@@ -54,17 +47,27 @@ gulp.task('assets', function () {
 	.pipe(fontFilter.restore())
 });
 
+gulp.task('fonts', function() {
+	return gulp.src(['app/**/*.eot', 'app/**/*.woff', 'app/**/*.svg', 'app/**/*.ttf'])
+	.pipe($.flatten())
+	.pipe(gulp.dest('dist/fonts'))
+});
+
 gulp.task('inject', ['assets'], function () {
 	return gulp.src('app/*.html')
 	.pipe($.inject(gulp.src('app/assets/**/*.*'), {relative: true}))
 	.pipe(gulp.dest('app'));
 });
 
+gulp.task('start', function() {
+    gulp.start('styles', 'scripts', 'inject');
+});
+
 gulp.task('clean', function(cb) {
     del(['dist', 'app/.tmp', 'app/assets'], cb)
 });
 
-gulp.task('deploy', ['inject'], function () {
+gulp.task('deploy', function () {
 	var gulpif = require('gulp-if');
     var assets = $.useref.assets();
     return gulp.src('app/*.html')
@@ -76,8 +79,14 @@ gulp.task('deploy', ['inject'], function () {
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', function() {
-    gulp.start('styles', 'scripts', 'images', 'fonts', 'deploy');
+gulp.task('build', ['assets', 'start'], function() {
+    gulp.start('deploy', 'images', 'fonts');
+});
+
+gulp.task('watch', function() {
+	gulp.watch('app/styles/**/*.less', ['styles']);
+	gulp.watch('app/scripts/**/*.js', ['scripts']);
+	gulp.watch('app/images/**/*', ['images']);
 });
 
 gulp.task('serve', ['watch'], function() {
@@ -89,12 +98,6 @@ gulp.task('serve', ['watch'], function() {
 	gulp.watch(['*.html', '.tmp/*.css', '.tmp/*.js'], {cwd: 'app'}, reload);
 });
 
-gulp.task('watch', ['styles', 'scripts'], function() {
-	gulp.watch('app/styles/**/*.less', ['styles']);
-	gulp.watch('app/scripts/**/*.js', ['scripts']);
-	gulp.watch('app/images/**/*', ['images']);
-});
-
 gulp.task('default', ['clean'], function() {
-	gulp.start('build', 'serve');
+	gulp.start('start', 'serve');
 });
