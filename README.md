@@ -12,7 +12,7 @@ Front-end workflow for automated best practices.
 
 ## Usage
 
-Install default libraries (Bootstrap + jQuery)
+Install default libraries (Bootstrap + jQuery + Modernizr)
 
 	bower install
 
@@ -28,11 +28,17 @@ When finished, build for production
 
 	gulp build
 
-Restart webserver if it hangs
+## Commands
+
+If you add dependencies later on, run this command to inject them
+
+	gulp inject
+
+To restart the webserver then, or in case of syntax errors
 
 	gulp serve
 
-## What it does
+## Features
 
 - Effortless dependencies installation via Bower
 - Updates every change in real-time in your browser

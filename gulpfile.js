@@ -55,7 +55,9 @@ gulp.task('fonts', function() {
 
 gulp.task('inject', ['assets'], function () {
 	return gulp.src('app/*.html')
-	.pipe($.inject(gulp.src('app/assets/**/*.*'), {relative: true}))
+	.pipe($.inject(gulp.src('app/assets/js/jquery.js'), {name: 'jquery', relative: 'true'}))
+	.pipe($.inject(gulp.src('app/assets/js/modernizr.js'), {name: 'modernizr', relative: 'true'}))
+	.pipe($.inject(gulp.src(['app/assets/**/*.*', '!app/assets/js/jquery.js', '!app/assets/js/modernizr.js'], {read: false}), {relative: true}))
 	.pipe(gulp.dest('app'));
 });
 
@@ -86,7 +88,6 @@ gulp.task('build', ['assets', 'start'], function() {
 gulp.task('watch', function() {
 	gulp.watch('app/styles/**/*.less', ['styles']);
 	gulp.watch('app/scripts/**/*.js', ['scripts']);
-	gulp.watch('app/images/**/*', ['images']);
 });
 
 gulp.task('serve', ['watch'], function() {
