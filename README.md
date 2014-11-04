@@ -2,6 +2,13 @@
 
 Front-end workflow for automated best practices.
 
+## Features
+
+- Effortless dependencies installation via Bower
+- Updates every change in real-time in your browser
+- Minimization and optimization for /dist version
+- LESS CSS pre-processor and autoprefixer support
+
 ## Setup
 
 	git clone https://github.com/pwnjack/primer
@@ -37,10 +44,3 @@ If you add dependencies later on, run this command to inject them
 To restart the webserver then, or in case of syntax errors
 
 	gulp serve
-
-## Features
-
-- Effortless dependencies installation via Bower
-- Updates every change in real-time in your browser
-- Minimization and optimization for /dist version
-- LESS CSS pre-processor and autoprefixer support
