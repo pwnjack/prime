@@ -11,19 +11,21 @@ Front-end development workflow and automated best practices.
 
 ## Setup
 
+Download and install dev dependencies
+
 	git clone https://github.com/pwnjack/primer
 
 	cd primer
 
 	npm install
-
-## Usage
-
-Install default libraries (Bootstrap + jQuery + Modernizr)
+	
+Install default packages (Bootstrap + jQuery + Modernizr)
 
 	bower install
 
-Install additional libraries
+## Usage
+
+Install your own packages
 
 	bower install --save <package-name>
 
@@ -35,7 +37,7 @@ When you are done, build for production
 
 	gulp build
 
-## Additional commands
+## More commands
 
 If you add dependencies later on, run this command to inject references in your HTML
 
