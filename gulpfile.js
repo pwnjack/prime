@@ -25,9 +25,17 @@ gulp.task('scripts', function() {
 	.pipe(gulp.dest('app/.tmp'))
 });
 
-gulp.task('images', function() {
+gulp.task('clear_cache', function (done) {
+    return $.cache.clearAll(done);
+});
+
+gulp.task('images', ['clear_cache'], function() {
 	return gulp.src('app/images/*')
-	.pipe($.cache($.imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+	.pipe($.cache($.imagemin({
+        optimizationLevel: 3,
+        progressive: true,
+        interlaced: true
+    })))
 	.pipe(gulp.dest('dist/images'))
 });
 
@@ -59,7 +67,7 @@ gulp.task('extra', function() {
 });
 
 gulp.task('inject', ['assets'], function () {
-	return gulp.src('app/*.html')
+	return gulp.src(['app/*.html', '!app/404.html'])
 	.pipe($.inject(gulp.src('app/assets/js/jquery.js'), {name: 'jquery', relative: 'true'}))
 	.pipe($.inject(gulp.src('app/assets/js/modernizr.js'), {name: 'modernizr', relative: 'true'}))
 	.pipe($.inject(gulp.src(['app/assets/**/*.*', '!app/assets/js/jquery.js', '!app/assets/js/modernizr.js'], {read: false}), {relative: true}))
@@ -74,7 +82,7 @@ gulp.task('clean', function(cb) {
     del(['dist', 'app/.tmp', 'app/assets'], cb)
 });
 
-gulp.task('deploy', function () {
+gulp.task('deploy', ['inject'], function () {
 	var gulpif = require('gulp-if');
     var assets = $.useref.assets();
     return gulp.src('app/*.html')
