@@ -1,10 +1,14 @@
 {
   "name": "primer",
   "version": "0.0.1",
-  "description": "",
+  "description": "Front-end development workflow and automated best practices.",
   "main": "gulpfile.js",
   "author": "@pwnjack",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pwnjack/primer.git"
+  },
   "devDependencies": {
     "browser-sync": "^1.6.1",
     "del": "^0.1.3",

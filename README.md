@@ -1,13 +1,13 @@
 # Primer
 
-Front-end workflow for automated best practices.
+Front-end development workflow and automated best practices.
 
 ## Features
 
 - Effortless dependencies installation via Bower
-- Updates every change in real-time in your browser
-- Minimization and optimization for /dist version
-- LESS CSS pre-processor and autoprefixer support
+- Real-time browser updates at every file change
+- Code minimization and image optimization for /dist version
+- LESS CSS pre-processor with autoprefixer support
 
 ## Setup
 
@@ -31,16 +31,20 @@ Start to develop
 
 	gulp
 
-When finished, build for production
+When you are done, build for production
 
 	gulp build
 
-## Commands
+## Additional commands
 
-If you add dependencies later on, run this command to inject them
+If you add dependencies later on, run this command to inject references in your HTML
 
 	gulp inject
 
-To restart the webserver then, or in case of syntax errors
+To restart the webserver when it stops (after injection or in case of syntax errors)
 
 	gulp serve
+
+## Workflow
+
+Simply work on the /app folder while previewing it in your favorite browser, when ready to deploy your app use the build command and inside the /dist folder you'll find your fully optimized webapp ready to be published.
