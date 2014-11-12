@@ -11,6 +11,7 @@ var reload = browserSync.reload;
 gulp.task('styles', function() {
 	return gulp.src(['app/styles/*.less', '!variables.less'])
 	.pipe($.order([
+		"fontface.less",
 		"style.less",
 		"responsive.less"
 	]))
