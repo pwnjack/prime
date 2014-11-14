@@ -60,12 +60,10 @@ gulp.task('extra', function() {
 });
 
 gulp.task('inject', function () {
-	var wiredep = require('wiredep').stream;
-	return gulp.src('app/*.html')
-	.pipe(wiredep({
-		exclude: 'bower_components/modernizr/modernizr.js'
-	}))
-	.pipe(gulp.dest('app'))
+    return gulp.src('app/*.html')
+    .pipe($.inject(gulp.src(mainBowerFiles(), {read: false}), {name: 'bower', relative: true}))
+    .pipe($.inject(gulp.src('app/bower_components/**/modernizr.js', {read: false}), {name: 'modernizr', relative: true}))
+    .pipe(gulp.dest('app'));
 });
 
 gulp.task('start', function() {
