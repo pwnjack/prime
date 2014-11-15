@@ -7,9 +7,9 @@
 
 # THANKS
 
-    primal -- Project -- http://github.com/pwnjack/primal 
+    prime -- Project -- http://github.com/pwnjack/prime
 
 # TECHNOLOGY COLOPHON
 
     HTML5, CSS3, JS
-    jQuery, Modernizr, Bootstrap
+    jQuery, Modernizr, Bootstrap, Less
