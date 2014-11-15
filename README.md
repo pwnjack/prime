@@ -1,4 +1,4 @@
-# Primer
+# Prime
 
 Manage frontend dependencies and deployment with no effort.
 
@@ -13,9 +13,9 @@ Manage frontend dependencies and deployment with no effort.
 
 Download this git and install it's dev dependencies:
 
-	git clone https://github.com/pwnjack/primer
+	git clone https://github.com/pwnjack/prime
 
-	cd primer
+	cd prime
 
 	npm install
 	
