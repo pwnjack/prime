@@ -5,7 +5,7 @@ Manage frontend dependencies and deployment with no effort.
 ## Features
 
 - Dependencies installation via Bower including HTML injection
-- Real-time update your browser on every file save
+- LiveReload webserver for instant browser updates
 - Code and image minimization for <code>/dist</code> version
 - LessCSS syntax support automagically vendor-prefixed
 
