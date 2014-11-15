@@ -1,1 +1,1 @@
-console.log('primer');
+console.log('Prime is ready');
