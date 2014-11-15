@@ -1,7 +1,7 @@
 {
   "name": "primer",
   "version": "0.0.1",
-  "description": "Front-end development workflow and automated best practices.",
+  "description": "Manage frontend dependencies and deployment with no effort",
   "main": "gulpfile.js",
   "author": "@pwnjack",
   "license": "MIT",
