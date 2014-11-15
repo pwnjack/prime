@@ -1,17 +1,17 @@
 # Primer
 
-Front-end development workflow and automated best practices.
+Manage frontend dependencies and deployment with no effort.
 
 ## Features
 
-- Effortless dependencies installation via Bower
-- Real-time browser updates at every file change
-- Code minimization and image optimization for /dist version
-- LESS CSS pre-processor with autoprefixer support
+- Bower install and html inject on the fly
+- Real-time browser updates at every file save
+- Code minimization and image optimization for <code>/dist</code> version
+- Less css support including autoprefixer
 
 ## Setup
 
-Download and install dev dependencies
+Download this git and install it's dev dependencies:
 
 	git clone https://github.com/pwnjack/primer
 
@@ -19,34 +19,34 @@ Download and install dev dependencies
 
 	npm install
 	
-Install default packages (Bootstrap + jQuery + Modernizr)
+Install default packages (Bootstrap + jQuery + Modernizr):
 
 	bower install
 
 ## Usage
 
-Install your own packages
+Install your own packages:
 
 	bower install --save <package-name>
 
-Start to develop
+Start to develop your project:
 
 	gulp
 
-When you are done, build for production
+When you are done, build for production:
 
 	gulp build
 
 ## More commands
 
-If you add dependencies later on, run this command to inject references in your HTML
+If you add more dependencies later on, run this command to inject their reference tags in your HTML
 
 	gulp inject
 
-To restart the webserver when it stops (after injection or in case of syntax errors)
+Restart the live-preview webserver (In case of post-injection or syntax errors in your code)
 
 	gulp serve
 
 ## Workflow
 
-Simply work on the /app folder while previewing it in your favorite browser, when ready to deploy your app use the build command and inside the /dist folder you'll find your fully optimized webapp ready to be published.
+Simply work on the /app folder while previewing it in your favorite browser, when ready to deploy your app just use the <coed>gulp build</code> command and you'll find your production-optimized webapp into the /dist folder, ready to be published.
