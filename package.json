@@ -1,5 +1,5 @@
 {
-  "name": "primer",
+  "name": "prime",
   "version": "0.0.1",
   "description": "Manage frontend dependencies and deployment with no effort",
   "main": "gulpfile.js",
@@ -7,7 +7,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/pwnjack/primer.git"
+    "url": "git://github.com/pwnjack/prime.git"
   },
   "devDependencies": {
     "browser-sync": "^1.6.1",
