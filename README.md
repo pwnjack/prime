@@ -49,4 +49,4 @@ Restart the live-preview webserver (In case of post-injection or syntax errors i
 
 ## Workflow
 
-Simply sue the <code>gulp</code> command and work on the <code>/app</code> folder while previewing it in your favorite browser, when ready to deploy just use the <code>gulp build</code> command and you'll find your production-optimized webapp into the /dist folder, ready to be published.
+Simply sue the <code>gulp</code> command and work on the <code>/app</code> folder while previewing it in your favorite browser, when ready to deploy just use the <code>gulp build</code> command and you'll find your production-optimized webapp into the <code>/dist</code> folder, ready to be published.
