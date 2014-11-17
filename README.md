@@ -6,7 +6,7 @@ Manage frontend dependencies and deployment with no effort.
 
 - Dependencies installation via Bower including HTML injection
 - LiveReload webserver for instant browser updates
-- Code and image minimization for <code>/dist</code> version
+- Code and images minimization for <code>/dist</code> version
 - LessCSS syntax support automagically vendor-prefixed
 
 ## Setup
@@ -49,4 +49,4 @@ Restart the live-preview webserver (In case of post-injection or syntax errors i
 
 ## Workflow
 
-Simply work on the /app folder while previewing it in your favorite browser, when ready to deploy your app just use the <code>gulp build</code> command and you'll find your production-optimized webapp into the /dist folder, ready to be published.
+Simply <code>gulp</code> and start working on the /app folder while previewing it in your favorite browser, when ready to deploy your app just use the <code>gulp build</code> command and you'll find your production-optimized webapp into the /dist folder, ready to be published.
