@@ -1,6 +1,6 @@
 # Prime
 
-Manage frontend dependencies and deployment with no effort.
+Manage frontend dependencies and deployment effortlessly.
 
 ## Features
 

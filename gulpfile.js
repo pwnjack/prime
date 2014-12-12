@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var gFilter = require('gulp-filter');
 var mainBowerFiles = require('main-bower-files');
 var del = require('del');
 var browserSync = require('browser-sync');
