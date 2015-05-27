@@ -1,7 +1,7 @@
 {
   "name": "prime",
   "version": "0.0.1",
-  "description": "Manage frontend dependencies and deployment effortlessly",
+  "description": "Manage frontend dependencies and deployment with no effort",
   "main": "gulpfile.js",
   "author": "@pwnjack",
   "license": "MIT",
