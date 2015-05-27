@@ -27,7 +27,7 @@ Install default packages (Bootstrap + jQuery + Modernizr):
 
 Install your own packages:
 
-	bower install --save <package-name>
+	bower install --save package-name
 
 Start to develop your project:
 
